@@ -1,0 +1,179 @@
+:root {
+  --primary-gradient: linear-gradient(135deg, #cf9aff, #95c0ff);
+  --button-gradient: linear-gradient(#9418fd, #571094);
+  --button-hover-gradient: linear-gradient(#7d13d6, #4a0f7a);
+  --text-color: #fff;
+  --note-bg: #fff;
+  --note-text: #333;
+  --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--primary-gradient);
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  margin-top: 10%;
+  min-height: 100vh;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.container {
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+}
+
+.container h1 {
+  font-size: 45px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.container h1 img {
+  width: 40px;
+  height: 40px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  background: var(--button-gradient);
+  color: var(--text-color);
+  font-size: 16px;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  padding: 15px 25px;
+  margin: 20px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: var(--button-hover-gradient);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.btn img {
+  width: 20px;
+  margin-right: 8px;
+}
+
+.notes-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.input-box {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  background: var(--note-bg);
+  color: var(--note-text);
+  padding: 20px;
+  min-height: 80px;
+  border-radius: 8px;
+  outline: none;
+  font-size: 16px;
+  word-break: break-word;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow);
+}
+
+.input-box:focus-within {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.input-box p {
+  flex: 1;
+  outline: none;
+  padding: 5px;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  transition: background 0.2s ease;
+}
+
+.delete-btn:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.delete-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 20px;
+  color: rgba(255, 255, 255, 0.7);
+  font-style: italic;
+}
+
+*:focus {
+  outline: 2px solid var(--button-hover-gradient);
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  .container h1 {
+    font-size: 32px;
+  }
+
+  .btn {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+
+  .input-box {
+    padding: 15px;
+    min-height: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    margin-top: 20%;
+  }
+
+  .container h1 {
+    font-size: 28px;
+  }
+
+  .container h1 img {
+    width: 30px;
+    height: 30px;
+  }
+}
